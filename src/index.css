@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply bg-bg_tertiary font-montserrat;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-bold;
+  }
+  section {
+    @apply py-10
+  }
+}
+
+.slick-arrow {
+  @apply !z-20
+}
+.slider-product .slick-track {
+  @apply !flex !gap-x-5
+}
+/* .slick-prev {
+  @apply !left-10
+} */
+/* .slick-next {
+  @apply !right-20
+} */
