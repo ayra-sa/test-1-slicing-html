@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+// import React from "react";
 import { Button } from "../ui/Button";
 import { formatCurrency } from "../../utils";
 import Slider from "react-slick";

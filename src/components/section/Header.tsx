@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { navbarMenus } from "../../utils/static";
 import { ChevronDown, Search, ShoppingCart, UserCircle } from "lucide-react";
 
