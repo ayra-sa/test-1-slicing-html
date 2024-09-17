@@ -1,10 +1,12 @@
 // import React from "react";
+import { useState } from "react";
 import { navbarMenus } from "../../utils/static";
-import { ChevronDown, Search, ShoppingCart, UserCircle } from "lucide-react";
+import { ChevronDown, Menu, Search, ShoppingCart, UserCircle, X } from "lucide-react";
 
 const Header = () => {
+  const [isExpand, setIsExpand] = useState(false)
   return (
-    <header className="bg-primary pt-5 text-white relative z-30">
+    <header className="bg-primary pt-5 pb-5 lg:pb-0 text-white relative z-30">
       <nav>
         <div className="container">
           <div className="flex items-center justify-between">
@@ -14,7 +16,7 @@ const Header = () => {
             <a href="/" className="font-bold text-6xl">
               mino.
             </a>
-            <div className="flex items-center gap-x-7">
+            <div className="hidden lg:flex items-center gap-x-7">
               <button>
                 <ShoppingCart />
               </button>
@@ -22,9 +24,12 @@ const Header = () => {
                 <UserCircle />
               </button>
             </div>
+            <button className="block lg:hidden relative z-10" onClick={() => setIsExpand(!isExpand)}>
+              {isExpand ? <X /> : <Menu />}
+            </button>
           </div>
 
-          <ul className="flex items-center gap-x-10 py-3 justify-center uppercase text-lg">
+          <ul className={`flex flex-col fixed inset-0 bg-primary transition-transform duration-300 lg:flex-row items-center gap-x-10 gap-y-5 py-3 justify-center uppercase text-lg lg:static lg:transform-none ${isExpand ? "translate-y-0" : "-translate-y-full"}`}>
             {navbarMenus.map((menu, index) => (
               <li key={index}>
                 {menu.subMenu ? (
