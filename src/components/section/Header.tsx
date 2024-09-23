@@ -1,7 +1,8 @@
 // import React from "react";
 import { useState } from "react";
 import { navbarMenus } from "../../utils/static";
-import { ChevronDown, Menu, Search, ShoppingCart, UserCircle, X } from "lucide-react";
+import { Menu, Search, ShoppingCart, UserCircle, X } from "lucide-react";
+import NavMega from "../ui/NavMega";
 
 const Header = () => {
   const [isExpand, setIsExpand] = useState(false)
@@ -33,11 +34,7 @@ const Header = () => {
             {navbarMenus.map((menu, index) => (
               <li key={index}>
                 {menu.subMenu ? (
-                  <div className="">
-                    <span className="flex items-center gap-x-2 cursor-pointer">
-                      {menu.menu} <ChevronDown />
-                    </span>
-                  </div>
+                  <NavMega menu={menu.menu} subMenu={menu.subMenu} />
                 ) : (
                   <a href={menu.link}>{menu.menu}</a>
                 )}
